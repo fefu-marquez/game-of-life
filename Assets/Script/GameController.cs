@@ -19,17 +19,37 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isPlaying = false;
-        inTurn = false;
-        CreateGrid();
+        var automaton = new Automaton();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+        automaton.Step();
+        automaton.PrintBoard();
+
+        //isPlaying = false;
+        //inTurn = false;
+        //CreateGrid();
     }
 
     // Update is called once per frame
-    void Update() { 
-        if (isPlaying && !inTurn)
-        {
-            StartCoroutine(HandleTurns());
-        }
+    void Update() 
+    {
+        //if (isPlaying && !inTurn)
+        //{
+        //    StartCoroutine(HandleTurns());
+        //}
     }
 
     private IEnumerator HandleTurns()
