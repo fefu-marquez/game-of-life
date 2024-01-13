@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
-public class JohnConwaysGameOfLife : Ruleset
+using System.Collections.Generic;
+
+public class JohnConwaysGameOfLife
 {
-    public void InitializeRules()
+    public static Dictionary<string, Rule> InitializeRules()
     {
+        var rules = new Dictionary<string, Rule>();
+
         for (int i = 0; i < 512; i++)
         {
-            this.Add(new Rule(ExpandBits(i), true));
+            var bytes = ExpandBits(i);
+            var rule = new Rule(ExpandBits(i), true);
+            if (bytes[0] != bytes[9]) rules.Add(rule.Key, rule);
         }
+
+        return rules;
     }
 
     public static byte[] ExpandBits(int value)

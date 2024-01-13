@@ -58,7 +58,7 @@ public class Ruleset: List<Rule>
             }
         }
 
-        //return -1;
-        throw new Exception($"Did not found any matches for rule: \n\n {rule}");
+        return -1;
+        //throw new Exception($"Did not found any matches for rule: \n\n {rule}");
     }
 }

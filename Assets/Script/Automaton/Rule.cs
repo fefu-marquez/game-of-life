@@ -12,6 +12,8 @@ public class Rule
             return new ulong[] { value[0], value[1] & 0xffffffffffffff00 };
         } }
 
+    public string Key { get => WeakValue[0].ToString() + WeakValue[1].ToString(); }
+
     public byte CellNextState { get => BitConverter.GetBytes(value[1])[0]; }
 
     public Rule(byte[] cells, bool usesEightNeighbours)

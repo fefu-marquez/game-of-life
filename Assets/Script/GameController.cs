@@ -14,29 +14,31 @@ public class GameController : MonoBehaviour
     private List<List<Cell>> board;
     private bool isPlaying;
     private bool inTurn;
+    Automaton automaton;
+    StepTimer timer;
     public List<List<Cell>> Board { get => board; set => board = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-        var automaton = new Automaton();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
-        automaton.Step();
-        automaton.PrintBoard();
+        automaton = new Automaton();
+        //automaton.PrintBoard();
+        
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
+        //automaton.Step();
+        //automaton.PrintBoard();
 
         //isPlaying = false;
         //inTurn = false;
@@ -44,8 +46,10 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
+        automaton.DebugStep();
+        //automaton.PrintBoard();
         //if (isPlaying && !inTurn)
         //{
         //    StartCoroutine(HandleTurns());
